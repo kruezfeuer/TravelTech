@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net" agent="OpenAI">
+  <diagram id="bbf62156-9b0d-4002-b918-f549d4503245" name="Architecture">
+    <mxGraphModel dx="1414" dy="1851" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="client" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Mobile App" vertex="1">
+          <mxGeometry height="60" width="130" x="30" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="130" x="200" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="trip" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Trip Service" vertex="1">
+          <mxGeometry height="60" width="140" x="195" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="book" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Booking Aggregator" vertex="1">
+          <mxGeometry height="60" width="160" x="360" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="notif" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Notification Service" vertex="1">
+          <mxGeometry height="60" width="160" x="185" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="rec" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Recommendation Engine" vertex="1">
+          <mxGeometry height="60" width="160" x="360" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Trip DB" vertex="1">
+          <mxGeometry height="60" width="120" x="345" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="flight" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Flight API" vertex="1">
+          <mxGeometry height="60" width="130" x="200" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Hotel API" vertex="1">
+          <mxGeometry height="60" width="130" x="530" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="transfer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Transfer API" vertex="1">
+          <mxGeometry height="60" width="130" x="700" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="activity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Activity API" vertex="1">
+          <mxGeometry height="60" width="130" x="870" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="sync" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Sync Queue" vertex="1">
+          <mxGeometry height="60" width="130" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="client" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="api" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="api" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="trip" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="api" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="book" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="api" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="notif" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="api" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="rec" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="api" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="sync" value="">
+          <mxGeometry relative="1" x="-0.2121" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="120" />
+              <mxPoint x="105" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="trip" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="db" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="book" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="db" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="30" />
+              <mxPoint x="440" y="30" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="notif" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="client" value="push">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="trip" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="flight" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="book" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="hotel" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="595" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="book" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="transfer" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="book" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="activity" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="935" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

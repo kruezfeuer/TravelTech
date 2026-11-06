@@ -1,0 +1,84 @@
+<mxfile host="app.diagrams.net" agent="OpenAI">
+  <diagram id="8f325868-9979-4293-a5e8-3905bdcd49b6" name="ERD">
+    <mxGraphModel dx="3304" dy="905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="trip" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Trip\ntrip_id\nstatus\nversion" vertex="1">
+          <mxGeometry height="110" width="140" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="part" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="TripParticipant\nparticipant_id\ntrip_id\nrole" vertex="1">
+          <mxGeometry height="110" width="160" x="540" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="seg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="TripSegment\nsegment_id\ntrip_id\nstatus" vertex="1">
+          <mxGeometry height="110" width="150" x="790" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="book" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Booking\nbooking_id\nsegment_id\nstatus" vertex="1">
+          <mxGeometry height="110" width="140" x="1060" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="flight" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="FlightStatus\nflight_status_id\nsegment_id\nstatus" vertex="1">
+          <mxGeometry height="110" width="170" x="780" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="notif" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Notification\nnotification_id\ntrip_id\nstatus" vertex="1">
+          <mxGeometry height="110" width="160" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="reco" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Recommendation\nrecommendation_id\ntrip_id\nscore" vertex="1">
+          <mxGeometry height="110" width="170" x="265" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="doc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="TravelerDocument\ndocument_id\nparticipant_id\nretention_until" vertex="1">
+          <mxGeometry height="110" width="190" x="525" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="sync" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="SyncEvent\nsync_event_id\ntrip_id\nstatus" vertex="1">
+          <mxGeometry height="110" width="150" x="1300" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="trip" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="part" value="1:N">
+          <mxGeometry relative="1" x="-0.0935" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="200" />
+              <mxPoint x="620" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="trip" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="seg" value="1:N">
+          <mxGeometry relative="1" x="-0.0163" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="seg" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="book" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="seg" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="flight" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="trip" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="notif" value="1:N">
+          <mxGeometry relative="1" x="0.2222" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="280" />
+              <mxPoint x="70" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="trip" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="reco" value="1:N">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="250" />
+              <mxPoint x="315" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="part" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="doc" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="trip" style="endArrow=block;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="sync" value="1:N">
+          <mxGeometry relative="1" x="-0.01" as="geometry">
+            <Array as="points">
+              <mxPoint x="1370" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> NEW
+    NEW --> SENT: Отправлено
+    SENT --> DELIVERED: Доставлено
+    DELIVERED --> ACKED: Подтверждено приложением
+    ACKED --> RESOLVED: Событие обработано
+    SENT --> EXPIRED: Истёк срок
+    NEW --> EXPIRED: Не отправлено вовремя
+    RESOLVED --> [*]
+    EXPIRED --> [*]

@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant User as Пользователь
+    participant App as Мобильное приложение
+    participant Service as Сервис поездки
+    participant Flight as Flight API
+    participant Notify as Notification Service
+    participant Rec as Recommendation Engine
+
+    User->>App: Создать поездку
+    App->>Service: POST /trips
+    Service-->>App: tripId, status
+
+    Flight-->>Service: Статус рейса: задержка
+    Service->>Notify: Создать уведомление
+    Notify-->>User: Push/In-app сообщение
+
+    Service->>Rec: Подобрать альтернативы
+    Rec-->>Service: Альтернативы с ограничениями
+
+    App->>Service: POST /trips/{tripId}/alternatives
+    Service-->>App: Список альтернатив
+
+    App->>Service: POST /trips/{tripId}/replan
+    Service-->>App: UPDATED version
+
+    Service->>Notify: Уведомить участников группы
+    Notify-->>User: Обновлённый план поездки

@@ -1,0 +1,35 @@
+flowchart LR
+    user["Пользователь"]
+    group["Участники поездки"]
+    service["Сервис планирования путешествий"]
+    flight["Flight API"]
+    hotel["Hotel API"]
+    transfer["Transfer API"]
+    activity["Activity API"]
+    notify["Notification Service"]
+    rec["Recommendation Engine"]
+    docs["Identity / Document Storage"]
+
+    user -->|"Создание поездки, просмотр плана"| service
+    group -->|"Совместное редактирование"| service
+
+    service -->|"Запрос статусов рейсов"| flight
+    flight -->|"Статусы и изменения рейсов"| service
+
+    service -->|"Поиск и бронирование"| hotel
+    hotel -->|"Результаты и подтверждение"| service
+
+    service -->|"Поиск и бронирование"| transfer
+    transfer -->|"Результаты и подтверждение"| service
+
+    service -->|"Поиск и бронирование"| activity
+    activity -->|"Результаты и подтверждение"| service
+
+    service -->|"Уведомления"| notify
+    notify -->|"Push/In-app"| user
+    notify -->|"Push/In-app"| group
+
+    service -->|"Персонализированные данные"| rec
+    rec -->|"Альтернативы и рекомендации"| service
+
+    service -->|"Проверка и минимизация данных"| docs

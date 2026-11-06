@@ -1,0 +1,15 @@
+stateDiagram-v2
+    [*] --> DRAFT
+    DRAFT --> PLANNING: Добавлены элементы маршрута
+    PLANNING --> ACTIVE: Поездка подтверждена
+    ACTIVE --> NEEDS_REPLAN: Изменение рейса или бронирования
+    NEEDS_REPLAN --> UPDATED: План пересобран
+    UPDATED --> ACTIVE: Новая версия принята
+    ACTIVE --> COMPLETED: Поездка завершена
+    DRAFT --> CANCELED: Отмена
+    PLANNING --> CANCELED: Отмена
+    ACTIVE --> CANCELED: Отмена
+    NEEDS_REPLAN --> CANCELED: Отмена
+    UPDATED --> CANCELED: Отмена
+    COMPLETED --> [*]
+    CANCELED --> [*]
